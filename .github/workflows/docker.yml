@@ -15,15 +15,25 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Login to DockerHub
+        if: ${{ secrets.DOCKERHUB_USERNAME && secrets.DOCKERHUB_TOKEN }}
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push
+      - name: Build (no push when secrets missing)
+        if: ${{ ! (secrets.DOCKERHUB_USERNAME && secrets.DOCKERHUB_TOKEN) }}
         uses: docker/build-push-action@v6
         with:
-          context: ./proofcite
-          file: ./proofcite/Dockerfile
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64
+          push: false
+      - name: Build and push
+        if: ${{ secrets.DOCKERHUB_USERNAME && secrets.DOCKERHUB_TOKEN }}
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
           platforms: linux/amd64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/proofcite:${{ github.ref_name }}

@@ -154,7 +154,7 @@ Client example: `python proofcite/examples/client.py`.
 
 ## Contact / CTA
 
-- Add evaluations to your agent with EvalOps: https://evalops.dev/?utm_source=gh_proofcite_readme&utm_medium=referral&utm_campaign=readme_cta
+- Add evaluations to your agent with [EvalOps](https://evalops.dev/?utm_source=gh_proofcite_readme&utm_medium=referral&utm_campaign=readme_cta)
 
 ## Changelog
 
