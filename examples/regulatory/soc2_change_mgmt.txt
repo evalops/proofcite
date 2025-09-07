@@ -1,0 +1,5 @@
+SOC 2 Change Management (excerpt)
+All production changes must be peer‑reviewed and approved before deployment.
+Emergency changes require documented post‑implementation review.
+Developers should not have standing write access to production.
+Changes must be tested in a non‑production environment prior to release.

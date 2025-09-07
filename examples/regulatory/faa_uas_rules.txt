@@ -1,0 +1,8 @@
+FAA UAS Operations (excerpt)
+Maximum altitude is 400 feet AGL unless within 400 feet of a structure.
+Maintain visual line of sight (VLOS) with the aircraft at all times.
+Do not fly over people or moving vehicles.
+Do not operate in controlled airspace without authorization.
+Yield right of way to manned aircraft.
+Do not operate under the influence of drugs or alcohol.
+Night operations require appropriate anti-collision lighting.

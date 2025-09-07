@@ -1,0 +1,165 @@
+Metadata-Version: 2.4
+Name: proofcite
+Version: 0.1.0
+Summary: Proof-of-Citation RAG — cite or shut up. Deterministic retrieval with line-anchored citations. Optional DSPy LLM variant.
+Author: EvalOps
+License: Proprietary
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: typer[all]==0.12.3
+Requires-Dist: scikit-learn==1.5.2
+Requires-Dist: numpy>=1.26
+Requires-Dist: gradio==4.44.0
+Requires-Dist: rich==13.7.1
+Requires-Dist: fastapi==0.112.2
+Requires-Dist: uvicorn[standard]==0.30.6
+Provides-Extra: dspy
+Requires-Dist: dspy-ai>=3.0.0; extra == "dspy"
+
+# Proof‑of‑Citation RAG — *Cite or shut up*
+
+**Why:** LLM answers without verifiable sources are liabilities. This returns only extractive answers with **line‑anchored citations**. If confidence is low, it **fails closed**.
+
+**How it works (ASCII):**
+
+```
+question ─┐
+          ├─> TF‑IDF over line‑level chunks ──> top‑k lines ──> threshold? ──> answer + [doc:line] cites
+docs ─────┘                                                └──> else: "Unverifiable"
+```
+
+## Quick Start (≤6 commands)
+
+```bash
+# 1) create env
+python -m venv .venv && . .venv/bin/activate
+# 2) install
+pip install -r requirements.txt
+# 3) run demo (uses small sample docs)
+python examples/comprehensive_demo.py
+# 4) CLI ask (glob for your docs)
+python -m proofcite.cli --docs "examples/data/*.txt" --q "What port does Jellyfin use?"
+#    JSON output
+python -m proofcite.cli --docs "examples/data/*.txt" --q "What port does Jellyfin use?" --json
+#    Batch mode (newline-delimited questions)
+printf "What port does Jellyfin use?\nHow do I access Uptime Kuma?\n" > /tmp/qs.txt
+python -m proofcite.cli --docs "examples/data/*.txt" --batch /tmp/qs.txt --json
+# 5) Gradio demo (HF Space compatible)
+python -m proofcite.gradio_app
+# 6) Docker 1‑click
+docker build -t evalops/proofcite . && docker run --rm -p 7860:7860 evalops/proofcite
+# 7) API server (FastAPI)
+python -m proofcite.api  # serves on :8000
+```
+
+## What it can do
+
+- **Direct extract** with **line anchors**, e.g. `docs/homelab.txt:42` *(~5–20 ms on CPU for small corpora)*
+- **Fail closed** if cosine similarity below threshold *(default 0.35)*
+- **Deterministic**: no API keys, runs anywhere
+  
+## Install (pip)
+
+```bash
+pip install -e .[dspy]
+# or without DSPy: pip install -e .
+```
+
+CLI entry points after install:
+
+```bash
+proofcite --docs "proofcite/examples/data/*.txt" --q "What port does Jellyfin use?" --json
+proofcite-dspy --docs "proofcite/examples/data/*.txt" --q "What port does Jellyfin use?" --json
+proofcite-gradio  # launches UI on :7860
+```
+
+## DSPy Variant (optional, LLM)
+
+- Install: `pip install dspy-ai`
+- Configure an LM via DSPy, e.g. `export OPENAI_API_KEY=...` and optionally `export DSPY_MODEL=openai/gpt-4o-mini`.
+- Use CLI: `python -m proofcite.dspy_cli --docs "examples/data/*.txt" --q "What port does Jellyfin use?" [--json]`.
+- Batch mode: `python -m proofcite.dspy_cli --docs "examples/data/*.txt" --batch /path/to/questions.txt --json`
+- Behavior: still fails closed via retrieval threshold. If above threshold, an LLM stitches a quote‑only answer and returns citations as JSON, enforcing extractive answers.
+
+Ollama setup (local LLM via LiteLLM):
+
+```bash
+export DSPY_PROVIDER=ollama
+export DSPY_MODEL=ollama/llama3    # or an installed Ollama model
+export OLLAMA_BASE=http://localhost:11434
+proofcite-dspy --docs "proofcite/examples/data/*.txt" --q "What port does Jellyfin use?" --json
+```
+
+## Adopt In Your Agent
+
+- Python (deterministic):
+  - `from proofcite.core import ProofCite`
+  - `pc.add_documents([...]); pc.build(); ans = pc.ask("...", threshold=0.35)`
+  - Check `ans.unverifiable`; otherwise use `ans.answer` and `ans.citations`.
+- CLI JSON (easy integration):
+  - `proofcite --docs "..." --q "..." --json | jq .`
+  - Fields: `answer`, `unverifiable`, `max_score`, `threshold`, `citations[]`.
+- DSPy snippet (LLM-backed): see `proofcite/dspy_variant.py` and `proofcite/examples/optimize_dspy.py`.
+
+## Devset + Evaluation
+
+- Sample devset: `proofcite/examples/devset.jsonl`
+- Baseline eval:
+  - `python proofcite/examples/evaluate_devset.py --mode baseline --docs "proofcite/examples/data/*.txt" --devset proofcite/examples/devset.jsonl`
+- DSPy eval (requires key/model):
+  - `python proofcite/examples/evaluate_devset.py --mode dspy --docs "proofcite/examples/data/*.txt" --devset proofcite/examples/devset.jsonl`
+
+## DSPy Optimizer (sketch)
+
+- Script: `proofcite/examples/optimize_dspy.py` builds few‑shot demos from retrieval and compiles a small program with `BootstrapFewShot`.
+- Run (requires DSPy + model/key):
+  - `python -m proofcite.examples.optimize_dspy --docs "proofcite/examples/data/*.txt"`
+
+## Run With Docker
+
+- Build: `docker build -t evalops/proofcite .`
+- Run: `docker run --rm -p 7860:7860 -e PROOFCITE_DOCS="proofcite/examples/data/*.txt" evalops/proofcite`
+  
+### Docker Compose (API + Gradio)
+
+```bash
+docker compose up --build
+# API:   http://localhost:8000
+# Gradio:http://localhost:7860
+```
+
+### API Usage
+
+```bash
+curl -s localhost:8000/health | jq .
+curl -s -X POST localhost:8000/ask \
+  -H 'Content-Type: application/json' \
+  -d '{"q":"What port does Jellyfin use?","k":5,"threshold":0.35}' | jq .
+
+# Batch
+curl -s -X POST localhost:8000/batch \
+  -H 'Content-Type: application/json' \
+  -d '{"qs":["What port does Jellyfin use?","How do I access Uptime Kuma?"],"k":5,"threshold":0.35}' | jq .
+```
+
+Client example: `python proofcite/examples/client.py`.
+
+## Contact / CTA
+
+- Add evaluations to your agent with EvalOps: https://evalops.dev/?utm_source=gh_proofcite_readme&utm_medium=referral&utm_campaign=readme_cta
+
+## Changelog
+
+See `CHANGELOG.md` (current: v0.1.0).
+
+## Related work
+
+- OpenAI "Retrieval augmented generation" primer
+- BM25/TF‑IDF classical IR
+- Line‑level citing in Elastic/ESQL style
+
+## Roadmap
+
+- Cross‑encoder re‑ranker (onnx, CPU‑friendly)
+- Chunk merging for contiguous citations
+- JSON Lines ingestion + embeddings option

@@ -1,0 +1,62 @@
+{
+  "rule": {
+    "id": "hipaa_plaintext",
+    "q": "Can PHI be stored in plain text?",
+    "allow_paths": "hipaa_privacy",
+    "min_citations": 1
+  },
+  "answer": "Do not store or transmit protected health information (PHI) in plain text. Limit PHI access to the minimum necessary workforce members. Do not include patient identifiers in logs, screenshots, or tickets.",
+  "unverifiable": false,
+  "citations": [
+    {
+      "path": "proofcite/examples/regulatory/hipaa_privacy.txt",
+      "line_no": 2,
+      "text": "Do not store or transmit protected health information (PHI) in plain text.",
+      "score": 0.48694392484604
+    },
+    {
+      "path": "proofcite/examples/regulatory/hipaa_privacy.txt",
+      "line_no": 6,
+      "text": "Breaches of unsecured PHI must be reported without unreasonable delay.",
+      "score": 0.12457351827659147
+    },
+    {
+      "path": "proofcite/examples/regulatory/hipaa_privacy.txt",
+      "line_no": 3,
+      "text": "Limit PHI access to the minimum necessary workforce members.",
+      "score": 0.07238722196704694
+    },
+    {
+      "path": "proofcite/examples/regulatory/hipaa_privacy.txt",
+      "line_no": 4,
+      "text": "Do not include patient identifiers in logs, screenshots, or tickets.",
+      "score": 0.04921421136980776
+    },
+    {
+      "path": "proofcite/examples/regulatory/hipaa_privacy.txt",
+      "line_no": 5,
+      "text": "Obtain patient authorization for non‑treatment disclosures.",
+      "score": 0.0
+    }
+  ],
+  "spans": [
+    {
+      "path": "proofcite/examples/regulatory/hipaa_privacy.txt",
+      "start_line": 2,
+      "end_line": 4,
+      "text": "Do not store or transmit protected health information (PHI) in plain text. Limit PHI access to the minimum necessary workforce members. Do not include patient identifiers in logs, screenshots, or tickets.",
+      "score": 0.48694392484604
+    },
+    {
+      "path": "proofcite/examples/regulatory/hipaa_privacy.txt",
+      "start_line": 6,
+      "end_line": 6,
+      "text": "Breaches of unsecured PHI must be reported without unreasonable delay.",
+      "score": 0.12457351827659147
+    }
+  ],
+  "max_score": 0.48694392484604,
+  "threshold": 0.35,
+  "compliant": true,
+  "reason": "citations from allowed sources"
+}

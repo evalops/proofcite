@@ -1,0 +1,45 @@
+{
+  "general": [
+    {
+      "mode": "baseline",
+      "total": 45,
+      "supported": 30,
+      "unsupported": 15,
+      "supported_correct": 21,
+      "unsupported_correct": 12,
+      "supported_cited": 25,
+      "supported_acc": 0.7,
+      "unsupported_acc": 0.8,
+      "name": "baseline:none"
+    },
+    {
+      "mode": "baseline",
+      "total": 45,
+      "supported": 30,
+      "unsupported": 15,
+      "supported_correct": 22,
+      "unsupported_correct": 12,
+      "supported_cited": 25,
+      "supported_acc": 0.7333333333333333,
+      "unsupported_acc": 0.8,
+      "name": "baseline:bm25"
+    },
+    {
+      "mode": "baseline",
+      "total": 45,
+      "supported": 30,
+      "unsupported": 15,
+      "supported_correct": 21,
+      "unsupported_correct": 12,
+      "supported_cited": 25,
+      "supported_acc": 0.7,
+      "unsupported_acc": 0.8,
+      "name": "baseline:hybrid"
+    }
+  ],
+  "regulatory": {
+    "total": 12,
+    "passed": 11,
+    "pass_rate": 0.9166666666666666
+  }
+}

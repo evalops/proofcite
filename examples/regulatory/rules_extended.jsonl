@@ -1,0 +1,12 @@
+{"id":"faa_altitude","q":"What is the maximum altitude for UAS flights?","allow_paths":"faa_uas_rules","min_citations":1, "threshold": 0.2}
+{"id":"faa_people","q":"Can I fly over people with a drone?","allow_paths":"faa_uas_rules","min_citations":1}
+{"id":"faa_vlos","q":"Is visual line of sight required?","allow_paths":"faa_uas_rules","min_citations":1}
+{"id":"fda_contra","q":"Should contraindicated drug combinations be co‑prescribed?","allow_paths":"fda_medication_safety","min_citations":1}
+{"id":"fda_hepatic","q":"What does FDA say about dosing in severe hepatic impairment?","allow_paths":"fda_medication_safety","min_citations":1}
+{"id":"hipaa_logs","q":"Is it acceptable to include patient identifiers in support tickets?","allow_paths":"hipaa_privacy","min_citations":1}
+{"id":"hipaa_plaintext","q":"Can PHI be stored in plain text?","allow_paths":"hipaa_privacy","min_citations":1}
+{"id":"sec_perf","q":"What disclosures are needed when advertising performance?","allow_paths":"sec_advertising","min_citations":1}
+{"id":"sec_hypo","q":"How should hypothetical performance be presented?","allow_paths":"sec_advertising","min_citations":1}
+{"id":"soc2_peer","q":"Do production changes require peer review?","allow_paths":"soc2_change_mgmt","min_citations":1}
+{"id":"soc2_access","q":"Should developers have standing write access to production?","allow_paths":"soc2_change_mgmt","min_citations":1}
+{"id":"sec_forward","q":"Can we provide forward‑looking investment advice?","allow_paths":"sec_rules","min_citations":1}

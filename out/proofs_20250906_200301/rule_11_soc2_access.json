@@ -1,0 +1,62 @@
+{
+  "rule": {
+    "id": "soc2_access",
+    "q": "Should developers have standing write access to production?",
+    "allow_paths": "soc2_change_mgmt",
+    "min_citations": 1
+  },
+  "answer": "Developers should not have standing write access to production. Changes must be tested in a non‑production environment prior to release.",
+  "unverifiable": false,
+  "citations": [
+    {
+      "path": "proofcite/examples/regulatory/soc2_change_mgmt.txt",
+      "line_no": 4,
+      "text": "Developers should not have standing write access to production.",
+      "score": 0.884822069293012
+    },
+    {
+      "path": "proofcite/examples/regulatory/soc2_change_mgmt.txt",
+      "line_no": 5,
+      "text": "Changes must be tested in a non‑production environment prior to release.",
+      "score": 0.08341509540738368
+    },
+    {
+      "path": "proofcite/examples/regulatory/soc2_change_mgmt.txt",
+      "line_no": 2,
+      "text": "All production changes must be peer‑reviewed and approved before deployment.",
+      "score": 0.0467309480805461
+    },
+    {
+      "path": "proofcite/examples/regulatory/soc2_change_mgmt.txt",
+      "line_no": 1,
+      "text": "SOC 2 Change Management (excerpt)",
+      "score": 0.0
+    },
+    {
+      "path": "proofcite/examples/regulatory/soc2_change_mgmt.txt",
+      "line_no": 3,
+      "text": "Emergency changes require documented post‑implementation review.",
+      "score": 0.0
+    }
+  ],
+  "spans": [
+    {
+      "path": "proofcite/examples/regulatory/soc2_change_mgmt.txt",
+      "start_line": 4,
+      "end_line": 5,
+      "text": "Developers should not have standing write access to production. Changes must be tested in a non‑production environment prior to release.",
+      "score": 0.884822069293012
+    },
+    {
+      "path": "proofcite/examples/regulatory/soc2_change_mgmt.txt",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "All production changes must be peer‑reviewed and approved before deployment.",
+      "score": 0.0467309480805461
+    }
+  ],
+  "max_score": 0.884822069293012,
+  "threshold": 0.35,
+  "compliant": true,
+  "reason": "citations from allowed sources"
+}

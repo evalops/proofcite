@@ -1,0 +1,6 @@
+HIPAA Privacy Rule (excerpt)
+Do not store or transmit protected health information (PHI) in plain text.
+Limit PHI access to the minimum necessary workforce members.
+Do not include patient identifiers in logs, screenshots, or tickets.
+Obtain patient authorization for non‑treatment disclosures.
+Breaches of unsecured PHI must be reported without unreasonable delay.

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proofcite"
+version = "0.1.0"
+description = "Proof-of-Citation RAG — cite or shut up. Deterministic retrieval with line-anchored citations. Optional DSPy LLM variant."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Proprietary" }
+authors = [{ name = "EvalOps" }]
+dependencies = [
+  "typer[all]==0.12.3",
+  "scikit-learn==1.5.2",
+  "numpy>=1.26",
+  "gradio==4.44.0",
+  "rich==13.7.1",
+  "fastapi==0.112.2",
+  "uvicorn[standard]==0.30.6",
+]
+
+[project.optional-dependencies]
+dspy = ["dspy-ai>=3.0.0"]
+
+[project.scripts]
+proofcite = "proofcite.cli:main"
+proofcite-dspy = "proofcite.dspy_cli:main"
+proofcite-gradio = "proofcite.gradio_app:main"
+proofcite-api = "proofcite.api:main"
+
+[tool.setuptools]
+packages = ["proofcite"]

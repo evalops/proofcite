@@ -1,0 +1,55 @@
+{
+  "rule": {
+    "id": "fda_contra",
+    "q": "Should contraindicated drug combinations be co‑prescribed?",
+    "allow_paths": "fda_medication_safety",
+    "min_citations": 1
+  },
+  "answer": "Do not co‑prescribe contraindicated drug combinations.",
+  "unverifiable": false,
+  "citations": [
+    {
+      "path": "proofcite/examples/regulatory/fda_medication_safety.txt",
+      "line_no": 2,
+      "text": "Do not co‑prescribe contraindicated drug combinations.",
+      "score": 0.653556421895594
+    },
+    {
+      "path": "proofcite/examples/regulatory/fda_medication_safety.txt",
+      "line_no": 5,
+      "text": "Report serious adverse events to FDA MedWatch.",
+      "score": 0.0
+    },
+    {
+      "path": "proofcite/examples/regulatory/fda_medication_safety.txt",
+      "line_no": 4,
+      "text": "Pediatric dosing must follow age‑appropriate guidance; avoid adult formulations in infants.",
+      "score": 0.0
+    },
+    {
+      "path": "proofcite/examples/regulatory/fda_medication_safety.txt",
+      "line_no": 3,
+      "text": "Use caution in severe hepatic impairment; adjust dosing per labeling.",
+      "score": 0.0
+    },
+    {
+      "path": "proofcite/examples/regulatory/fda_medication_safety.txt",
+      "line_no": 1,
+      "text": "FDA Medication Safety (excerpt)",
+      "score": 0.0
+    }
+  ],
+  "spans": [
+    {
+      "path": "proofcite/examples/regulatory/fda_medication_safety.txt",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "Do not co‑prescribe contraindicated drug combinations.",
+      "score": 0.653556421895594
+    }
+  ],
+  "max_score": 0.653556421895594,
+  "threshold": 0.35,
+  "compliant": true,
+  "reason": "citations from allowed sources"
+}

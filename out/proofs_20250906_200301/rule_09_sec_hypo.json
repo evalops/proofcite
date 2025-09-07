@@ -1,0 +1,55 @@
+{
+  "rule": {
+    "id": "sec_hypo",
+    "q": "How should hypothetical performance be presented?",
+    "allow_paths": "sec_advertising",
+    "min_citations": 1
+  },
+  "answer": "Performance advertising must be presented fairly and not be misleading. Include material risks and limitations when discussing performance. Hypothetical performance must be labeled and accompanied by disclosures.",
+  "unverifiable": false,
+  "citations": [
+    {
+      "path": "proofcite/examples/regulatory/sec_advertising.txt",
+      "line_no": 2,
+      "text": "Performance advertising must be presented fairly and not be misleading.",
+      "score": 0.3689587909103704
+    },
+    {
+      "path": "proofcite/examples/regulatory/sec_advertising.txt",
+      "line_no": 4,
+      "text": "Hypothetical performance must be labeled and accompanied by disclosures.",
+      "score": 0.3368791055973324
+    },
+    {
+      "path": "proofcite/examples/regulatory/sec_advertising.txt",
+      "line_no": 3,
+      "text": "Include material risks and limitations when discussing performance.",
+      "score": 0.07467964422120422
+    },
+    {
+      "path": "proofcite/examples/regulatory/sec_advertising.txt",
+      "line_no": 1,
+      "text": "SEC Advertising Rule (excerpt)",
+      "score": 0.0
+    },
+    {
+      "path": "proofcite/examples/regulatory/sec_advertising.txt",
+      "line_no": 5,
+      "text": "Do not cherry‑pick results without equal prominence of comparable data.",
+      "score": 0.0
+    }
+  ],
+  "spans": [
+    {
+      "path": "proofcite/examples/regulatory/sec_advertising.txt",
+      "start_line": 2,
+      "end_line": 4,
+      "text": "Performance advertising must be presented fairly and not be misleading. Include material risks and limitations when discussing performance. Hypothetical performance must be labeled and accompanied by disclosures.",
+      "score": 0.3689587909103704
+    }
+  ],
+  "max_score": 0.3689587909103704,
+  "threshold": 0.35,
+  "compliant": true,
+  "reason": "citations from allowed sources"
+}

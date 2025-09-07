@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    command: ["python", "-m", "proofcite.api"]
+    environment:
+      - PROOFCITE_DOCS=proofcite/examples/regulatory/*.txt
+      - PROOFCITE_MODE=baseline
+    ports:
+      - "8000:8000"
+  gradio:
+    build: .
+    command: ["python", "-m", "proofcite.gradio_app"]
+    environment:
+      - PROOFCITE_DOCS=proofcite/examples/regulatory/*.txt
+    ports:
+      - "7860:7860"

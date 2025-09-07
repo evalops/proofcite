@@ -1,0 +1,16 @@
+{
+  "rule": {
+    "id": "sec_perf",
+    "q": "What disclosures are needed when advertising performance?",
+    "allow_paths": "sec_advertising",
+    "min_citations": 1
+  },
+  "answer": "Unverifiable",
+  "unverifiable": true,
+  "citations": [],
+  "spans": [],
+  "max_score": 0.23124713329244764,
+  "threshold": 0.35,
+  "compliant": false,
+  "reason": "unverifiable or insufficient citations"
+}

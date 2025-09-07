@@ -1,0 +1,5 @@
+[console_scripts]
+proofcite = proofcite.cli:main
+proofcite-api = proofcite.api:main
+proofcite-dspy = proofcite.dspy_cli:main
+proofcite-gradio = proofcite.gradio_app:main

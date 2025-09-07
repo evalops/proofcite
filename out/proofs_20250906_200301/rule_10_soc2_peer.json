@@ -1,0 +1,55 @@
+{
+  "rule": {
+    "id": "soc2_peer",
+    "q": "Do production changes require peer review?",
+    "allow_paths": "soc2_change_mgmt",
+    "min_citations": 1
+  },
+  "answer": "All production changes must be peer‑reviewed and approved before deployment. Emergency changes require documented post‑implementation review. Developers should not have standing write access to production. Changes must be tested in a non‑production environment prior to release.",
+  "unverifiable": false,
+  "citations": [
+    {
+      "path": "proofcite/examples/regulatory/soc2_change_mgmt.txt",
+      "line_no": 3,
+      "text": "Emergency changes require documented post‑implementation review.",
+      "score": 0.38632125730136274
+    },
+    {
+      "path": "proofcite/examples/regulatory/soc2_change_mgmt.txt",
+      "line_no": 2,
+      "text": "All production changes must be peer‑reviewed and approved before deployment.",
+      "score": 0.3117067168090815
+    },
+    {
+      "path": "proofcite/examples/regulatory/soc2_change_mgmt.txt",
+      "line_no": 5,
+      "text": "Changes must be tested in a non‑production environment prior to release.",
+      "score": 0.1273607772999677
+    },
+    {
+      "path": "proofcite/examples/regulatory/soc2_change_mgmt.txt",
+      "line_no": 4,
+      "text": "Developers should not have standing write access to production.",
+      "score": 0.0684062027110212
+    },
+    {
+      "path": "proofcite/examples/regulatory/soc2_change_mgmt.txt",
+      "line_no": 1,
+      "text": "SOC 2 Change Management (excerpt)",
+      "score": 0.0
+    }
+  ],
+  "spans": [
+    {
+      "path": "proofcite/examples/regulatory/soc2_change_mgmt.txt",
+      "start_line": 2,
+      "end_line": 5,
+      "text": "All production changes must be peer‑reviewed and approved before deployment. Emergency changes require documented post‑implementation review. Developers should not have standing write access to production. Changes must be tested in a non‑production environment prior to release.",
+      "score": 0.38632125730136274
+    }
+  ],
+  "max_score": 0.38632125730136274,
+  "threshold": 0.35,
+  "compliant": true,
+  "reason": "citations from allowed sources"
+}

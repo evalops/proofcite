@@ -1,0 +1,10 @@
+typer[all]==0.12.3
+scikit-learn==1.5.2
+numpy>=1.26
+gradio==4.44.0
+rich==13.7.1
+fastapi==0.112.2
+uvicorn[standard]==0.30.6
+
+[dspy]
+dspy-ai>=3.0.0

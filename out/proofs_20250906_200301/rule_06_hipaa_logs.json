@@ -1,0 +1,55 @@
+{
+  "rule": {
+    "id": "hipaa_logs",
+    "q": "Is it acceptable to include patient identifiers in support tickets?",
+    "allow_paths": "hipaa_privacy",
+    "min_citations": 1
+  },
+  "answer": "Do not store or transmit protected health information (PHI) in plain text. Limit PHI access to the minimum necessary workforce members. Do not include patient identifiers in logs, screenshots, or tickets. Obtain patient authorization for non‑treatment disclosures.",
+  "unverifiable": false,
+  "citations": [
+    {
+      "path": "proofcite/examples/regulatory/hipaa_privacy.txt",
+      "line_no": 4,
+      "text": "Do not include patient identifiers in logs, screenshots, or tickets.",
+      "score": 0.6174574894239763
+    },
+    {
+      "path": "proofcite/examples/regulatory/hipaa_privacy.txt",
+      "line_no": 5,
+      "text": "Obtain patient authorization for non‑treatment disclosures.",
+      "score": 0.08003033336238002
+    },
+    {
+      "path": "proofcite/examples/regulatory/hipaa_privacy.txt",
+      "line_no": 3,
+      "text": "Limit PHI access to the minimum necessary workforce members.",
+      "score": 0.045430613336804274
+    },
+    {
+      "path": "proofcite/examples/regulatory/hipaa_privacy.txt",
+      "line_no": 2,
+      "text": "Do not store or transmit protected health information (PHI) in plain text.",
+      "score": 0.03599363699935333
+    },
+    {
+      "path": "proofcite/examples/regulatory/hipaa_privacy.txt",
+      "line_no": 6,
+      "text": "Breaches of unsecured PHI must be reported without unreasonable delay.",
+      "score": 0.0
+    }
+  ],
+  "spans": [
+    {
+      "path": "proofcite/examples/regulatory/hipaa_privacy.txt",
+      "start_line": 2,
+      "end_line": 5,
+      "text": "Do not store or transmit protected health information (PHI) in plain text. Limit PHI access to the minimum necessary workforce members. Do not include patient identifiers in logs, screenshots, or tickets. Obtain patient authorization for non‑treatment disclosures.",
+      "score": 0.6174574894239763
+    }
+  ],
+  "max_score": 0.6174574894239763,
+  "threshold": 0.35,
+  "compliant": true,
+  "reason": "citations from allowed sources"
+}

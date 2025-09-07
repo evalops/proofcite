@@ -1,0 +1,43 @@
+{
+  "rule": {
+    "id": "sec_forward",
+    "q": "Can we provide forward‑looking investment advice?",
+    "allow_paths": "sec_rules",
+    "min_citations": 1
+  },
+  "answer": "Do not provide forward-looking investment advice.",
+  "unverifiable": false,
+  "citations": [
+    {
+      "path": "proofcite/examples/regulatory/sec_rules.txt",
+      "line_no": 2,
+      "text": "Do not provide forward-looking investment advice.",
+      "score": 0.9058928855442299
+    },
+    {
+      "path": "proofcite/examples/regulatory/sec_rules.txt",
+      "line_no": 3,
+      "text": "Disclose risks when discussing financial products.",
+      "score": 0.0
+    },
+    {
+      "path": "proofcite/examples/regulatory/sec_rules.txt",
+      "line_no": 1,
+      "text": "SEC Communication Rules (excerpt)",
+      "score": 0.0
+    }
+  ],
+  "spans": [
+    {
+      "path": "proofcite/examples/regulatory/sec_rules.txt",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "Do not provide forward-looking investment advice.",
+      "score": 0.9058928855442299
+    }
+  ],
+  "max_score": 0.9058928855442299,
+  "threshold": 0.35,
+  "compliant": true,
+  "reason": "citations from allowed sources"
+}

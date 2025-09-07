@@ -1,0 +1,63 @@
+{
+  "rule": {
+    "id": "faa_altitude",
+    "q": "What is the maximum altitude for UAS flights?",
+    "allow_paths": "faa_uas_rules",
+    "min_citations": 1,
+    "threshold": 0.2
+  },
+  "answer": "FAA UAS Operations (excerpt) Maximum altitude is 400 feet AGL unless within 400 feet of a structure. Maintain visual line of sight (VLOS) with the aircraft at all times.",
+  "unverifiable": false,
+  "citations": [
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 2,
+      "text": "Maximum altitude is 400 feet AGL unless within 400 feet of a structure.",
+      "score": 0.2853803798663734
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 1,
+      "text": "FAA UAS Operations (excerpt)",
+      "score": 0.15992355767829022
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 7,
+      "text": "Do not operate under the influence of drugs or alcohol.",
+      "score": 0.06952900177605845
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 3,
+      "text": "Maintain visual line of sight (VLOS) with the aircraft at all times.",
+      "score": 0.05794619268687593
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 4,
+      "text": "Do not fly over people or moving vehicles.",
+      "score": 0.0
+    }
+  ],
+  "spans": [
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "start_line": 1,
+      "end_line": 3,
+      "text": "FAA UAS Operations (excerpt) Maximum altitude is 400 feet AGL unless within 400 feet of a structure. Maintain visual line of sight (VLOS) with the aircraft at all times.",
+      "score": 0.2853803798663734
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "start_line": 7,
+      "end_line": 7,
+      "text": "Do not operate under the influence of drugs or alcohol.",
+      "score": 0.06952900177605845
+    }
+  ],
+  "max_score": 0.2853803798663734,
+  "threshold": 0.2,
+  "compliant": true,
+  "reason": "citations from allowed sources"
+}

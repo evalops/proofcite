@@ -1,0 +1,62 @@
+{
+  "rule": {
+    "id": "fda_hepatic",
+    "q": "What does FDA say about dosing in severe hepatic impairment?",
+    "allow_paths": "fda_medication_safety",
+    "min_citations": 1
+  },
+  "answer": "Use caution in severe hepatic impairment; adjust dosing per labeling. Pediatric dosing must follow age‑appropriate guidance; avoid adult formulations in infants. Report serious adverse events to FDA MedWatch.",
+  "unverifiable": false,
+  "citations": [
+    {
+      "path": "proofcite/examples/regulatory/fda_medication_safety.txt",
+      "line_no": 3,
+      "text": "Use caution in severe hepatic impairment; adjust dosing per labeling.",
+      "score": 0.6098114086265435
+    },
+    {
+      "path": "proofcite/examples/regulatory/fda_medication_safety.txt",
+      "line_no": 4,
+      "text": "Pediatric dosing must follow age‑appropriate guidance; avoid adult formulations in infants.",
+      "score": 0.09828968863140977
+    },
+    {
+      "path": "proofcite/examples/regulatory/fda_medication_safety.txt",
+      "line_no": 1,
+      "text": "FDA Medication Safety (excerpt)",
+      "score": 0.09896585273206183
+    },
+    {
+      "path": "proofcite/examples/regulatory/fda_medication_safety.txt",
+      "line_no": 5,
+      "text": "Report serious adverse events to FDA MedWatch.",
+      "score": 0.06882841414895213
+    },
+    {
+      "path": "proofcite/examples/regulatory/fda_medication_safety.txt",
+      "line_no": 2,
+      "text": "Do not co‑prescribe contraindicated drug combinations.",
+      "score": 0.0
+    }
+  ],
+  "spans": [
+    {
+      "path": "proofcite/examples/regulatory/fda_medication_safety.txt",
+      "start_line": 3,
+      "end_line": 5,
+      "text": "Use caution in severe hepatic impairment; adjust dosing per labeling. Pediatric dosing must follow age‑appropriate guidance; avoid adult formulations in infants. Report serious adverse events to FDA MedWatch.",
+      "score": 0.6098114086265435
+    },
+    {
+      "path": "proofcite/examples/regulatory/fda_medication_safety.txt",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "FDA Medication Safety (excerpt)",
+      "score": 0.09896585273206183
+    }
+  ],
+  "max_score": 0.6098114086265435,
+  "threshold": 0.35,
+  "compliant": true,
+  "reason": "citations from allowed sources"
+}

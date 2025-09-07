@@ -1,0 +1,62 @@
+{
+  "rule": {
+    "id": "faa_vlos",
+    "q": "Is visual line of sight required?",
+    "allow_paths": "faa_uas_rules",
+    "min_citations": 1
+  },
+  "answer": "Maximum altitude is 400 feet AGL unless within 400 feet of a structure. Maintain visual line of sight (VLOS) with the aircraft at all times.",
+  "unverifiable": false,
+  "citations": [
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 3,
+      "text": "Maintain visual line of sight (VLOS) with the aircraft at all times.",
+      "score": 0.5141011049934352
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 2,
+      "text": "Maximum altitude is 400 feet AGL unless within 400 feet of a structure.",
+      "score": 0.08836686293594098
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 6,
+      "text": "Yield right of way to manned aircraft.",
+      "score": 0.0500042730293576
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 7,
+      "text": "Do not operate under the influence of drugs or alcohol.",
+      "score": 0.04416651788102523
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 1,
+      "text": "FAA UAS Operations (excerpt)",
+      "score": 0.0
+    }
+  ],
+  "spans": [
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "start_line": 2,
+      "end_line": 3,
+      "text": "Maximum altitude is 400 feet AGL unless within 400 feet of a structure. Maintain visual line of sight (VLOS) with the aircraft at all times.",
+      "score": 0.5141011049934352
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "start_line": 6,
+      "end_line": 7,
+      "text": "Yield right of way to manned aircraft. Do not operate under the influence of drugs or alcohol.",
+      "score": 0.0500042730293576
+    }
+  ],
+  "max_score": 0.5141011049934352,
+  "threshold": 0.35,
+  "compliant": true,
+  "reason": "citations from allowed sources"
+}

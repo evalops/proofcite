@@ -1,0 +1,55 @@
+{
+  "rule": {
+    "id": "faa_people",
+    "q": "Can I fly over people with a drone?",
+    "allow_paths": "faa_uas_rules",
+    "min_citations": 1
+  },
+  "answer": "Maintain visual line of sight (VLOS) with the aircraft at all times. Do not fly over people or moving vehicles.",
+  "unverifiable": false,
+  "citations": [
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 4,
+      "text": "Do not fly over people or moving vehicles.",
+      "score": 0.5761080603019887
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 3,
+      "text": "Maintain visual line of sight (VLOS) with the aircraft at all times.",
+      "score": 0.08754240845984455
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 2,
+      "text": "Maximum altitude is 400 feet AGL unless within 400 feet of a structure.",
+      "score": 0.0
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 1,
+      "text": "FAA UAS Operations (excerpt)",
+      "score": 0.0
+    },
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "line_no": 5,
+      "text": "Do not operate in controlled airspace without authorization.",
+      "score": 0.0
+    }
+  ],
+  "spans": [
+    {
+      "path": "proofcite/examples/regulatory/faa_uas_rules.txt",
+      "start_line": 3,
+      "end_line": 4,
+      "text": "Maintain visual line of sight (VLOS) with the aircraft at all times. Do not fly over people or moving vehicles.",
+      "score": 0.5761080603019887
+    }
+  ],
+  "max_score": 0.5761080603019887,
+  "threshold": 0.35,
+  "compliant": true,
+  "reason": "citations from allowed sources"
+}
